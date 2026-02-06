@@ -1,45 +1,93 @@
 # Fullness Fisio
 
-Proyecto React + TypeScript + Tailwind CSS para el sitio web de Fullness.
+Plataforma web moderna para la clínica de fisioterapia Fullness. Desarrollada con React, TypeScript y Tailwind CSS.
 
-## Requisitos
+## 🚀 Tecnologías
 
-- Node.js 16+
+- **React 18** - Librería de UI
+- **TypeScript** - Tipado estático
+- **Vite** - Build tool y servidor de desarrollo
+- **Tailwind CSS** - Framework CSS utility-first
+- **React Router** - Enrutamiento
+- **Prettier** - Formatter de código
+
+## 📋 Requisitos
+
+- Node.js 16 o superior
 - npm o pnpm
 
-## Instalación
+## ⚙️ Instalación
 
 ```bash
+# Clonar el repositorio
+git clone <repo-url>
+
+# Instalar dependencias
 npm install
 ```
 
-## Desarrollo
+## 🛠️ Desarrollo
 
 ```bash
+# Iniciar servidor de desarrollo
 npm run dev
 ```
 
-El proyecto estará disponible en `http://localhost:5173`
+Accede a `http://localhost:5173` en tu navegador.
 
-## Compilación
+## 📦 Compilación para Producción
 
 ```bash
+# Generar build optimizado
 npm run build
+
+# Previsualizar build de producción
+npm run preview
 ```
 
-## Componentes disponibles
-
-- **Topbar**: Barra superior con información de contacto y redes sociales
-- **Header**: Encabezado con logo, navegación y menús desplegables
-
-## Estructura del proyecto
+## 📁 Estructura del Proyecto
 
 ```
 src/
-├── components/
-│   ├── Header.tsx
-│   └── Topbar.tsx
-├── App.tsx
-├── main.tsx
-└── index.css
+├── components/              # Componentes reutilizables
+│   ├── buttons/            # Componentes de botones
+│   ├── common/             # Componentes de layout (Header, Topbar, Footer)
+│   └── sections/           # Secciones de contenido
+├── pages/                  # Páginas de la aplicación
+├── hooks/                  # Custom React Hooks
+├── types/                  # Tipos TypeScript compartidos
+├── utils/                  # Funciones auxiliares
+├── App.tsx                 # Componente raíz con rutas
+├── main.tsx                # Punto de entrada
+└── index.css               # Estilos globales
 ```
+
+Para más detalles sobre la arquitectura, ver [src/README.md](./src/README.md)
+
+## 🎨 Paleta de Colores
+
+- **Primary**: `#003366`
+- **Primary Light**: `#004488`
+
+## 🔗 Rutas Disponibles
+
+- `/` - Página de inicio
+- `/pacientes` - Información para pacientes
+- `/profesionales` - Información para profesionales
+- `/blog` - Blog de salud
+
+## 📝 Convenciones de Código
+
+- Componentes funcionales con TypeScript
+- Importaciones usando barrel exports (`index.ts`)
+- Nomenclatura clara y descriptiva
+- Componentes reutilizables en `src/components/`
+- Páginas en `src/pages/`
+
+## 👥 Equipo
+
+Desarrollado por el equipo de Fullness.
+
+## 📄 Licencia
+
+Copyright © 2026 Fullness. Todos los derechos reservados.
