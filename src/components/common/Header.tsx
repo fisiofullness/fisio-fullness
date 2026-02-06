@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PillButton } from '../buttons';
+import { HEADER_IMAGES } from '../../constants/images';
 
 interface HeaderProps {}
 
@@ -24,8 +25,8 @@ const Header: React.FC<HeaderProps> = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src="/header/Logo icon.png" alt="Fullness Logo Icon" className="h-8" />
-            <img src="/header/Fullness.png" alt="Fullness" className="h-8" />
+            <img src={HEADER_IMAGES.LOGO_ICON} alt="Fullness Logo Icon" className="h-8" />
+            <img src={HEADER_IMAGES.LOGO_TEXT} alt="Fullness" className="h-8" />
           </Link>
 
           {/* Navigation */}
@@ -34,9 +35,13 @@ const Header: React.FC<HeaderProps> = () => {
               <Link
                 key={item.label}
                 to={item.href}
-                className="text-gray-700 hover:text-primary transition font-medium"
+                className="text-black font-medium relative group transition-colors duration-300 hover:text-[#104E75]"
               >
                 {item.label}
+                <span 
+                  className="absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300"
+                  style={{ backgroundColor: '#104E75' }}
+                />
               </Link>
             ))}
           </nav>

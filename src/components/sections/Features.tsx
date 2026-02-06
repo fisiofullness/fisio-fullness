@@ -1,66 +1,39 @@
 import React from 'react';
-
-interface Feature {
-  icon: string;
-  title: string;
-  description: string;
-}
+import { PillButton } from '../buttons';
+import { HERO_IMAGES } from '../../constants/images';
 
 const Features: React.FC = () => {
-  const features: Feature[] = [
-    {
-      icon: '/beneficios/doctor.png',
-      title: 'Profesionales Certificados',
-      description: 'Nuestro equipo cuenta con certificaciones internacionales y amplia experiencia'
-    },
-    {
-      icon: '/beneficios/hospital.png',
-      title: 'Resultados Rápidos',
-      description: 'Tratamientos efectivos con protocolos modernos basados en evidencia científica'
-    },
-    {
-      icon: '/beneficios/doc.png',
-      title: 'Atención Personalizada',
-      description: 'Cada paciente recibe un plan de tratamiento adaptado a sus necesidades específicas'
-    },
-    {
-      icon: '/beneficios/calendar.png',
-      title: 'Horarios Flexibles',
-      description: 'Disponibilidad en horarios que se adapten a tu rutina diaria'
-    },
-    {
-      icon: '/beneficios/perfil.png',
-      title: 'Equipamiento Moderno',
-      description: 'Contamos con la tecnología más avanzada en fisioterapia'
-    },
-    {
-      icon: '/beneficios/cashpay.png',
-      title: 'Garantía de Satisfacción',
-      description: 'Tu bienestar es nuestra prioridad número uno'
-    },
-  ];
-
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-primary mb-4">¿Por qué elegirnos?</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Más de 10 años cuidando la salud de nuestros pacientes con excelencia y profesionalismo
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow"
-            >
-              <img src={feature.icon} alt={feature.title} className="w-12 h-12 mb-4" />
-              <h3 className="text-xl font-bold text-primary mb-3">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
-            </div>
-          ))}
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="order-2 md:order-1">
+            <img
+              src={HERO_IMAGES.BIENESTAR}
+              alt="Bienestar y salud"
+              className="w-full h-auto rounded-lg"
+            />
+          </div>
+          <div className="order-1 md:order-2">
+            <p className="font-semibold mb-2" style={{ color: '#104E75' }}>ACERCA DE FULLNESS</p>
+            <h2 className="text-4xl font-bold text-primary mb-6 leading-tight">
+              Priorizarte es avanzar
+            </h2>
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              En un mundo que nunca se detiene, cuidar de tu bienestar no debería sentirse
+              como un lujo, sino como una parte esencial de tu día a día.
+            </p>
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              En Fullness creemos que la vida funciona mejor cuando te sientes bien para
+              seguir construyendo lo que te importa.
+            </p>
+            <p className="text-gray-600 mb-8 leading-relaxed">
+              Aquí estás acompañado, no solo atendido.
+            </p>
+            <PillButton variant="primary">
+              Conoce más sobre nosotros
+            </PillButton>
+          </div>
         </div>
       </div>
     </section>

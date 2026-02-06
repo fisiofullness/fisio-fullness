@@ -1,4 +1,5 @@
 import React from 'react';
+import { HERO_IMAGES } from '../../constants/images';
 
 interface WhatsAppButtonProps {
   url?: string;
@@ -16,7 +17,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-40 animate-bounce hover:scale-110 transition-transform"
     >
-      <img src="/Btn Wpp.png" alt={imageAlt} className="w-16 h-16" />
+      <img src={HERO_IMAGES.WHATSAPP_BUTTON} alt={imageAlt} className="w-16 h-16" />
     </a>
   );
 };

@@ -1,12 +1,13 @@
 import React from 'react';
 import { PillButton, WhatsAppButton } from '../buttons';
+import { HERO_IMAGES } from '../../constants/images';
 
 const Hero: React.FC = () => {
   return (
     <>
       <WhatsAppButton url="https://web.whatsapp.com" />
 
-      <section className="relative bg-white overflow-hidden py-20">
+      <section className="relative bg-white overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left content */}
@@ -30,7 +31,7 @@ const Hero: React.FC = () => {
             {/* Right: Image */}
             <div className="relative">
               <img 
-                src="/portada/Imagen Portada.png" 
+                src={HERO_IMAGES.PORTADA}
                 alt="Profesionales de salud" 
                 className="w-full h-auto"
               />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ImageButton } from '../buttons';
+import { FOOTER_IMAGES } from '../../constants/images';
 
 const Footer: React.FC = () => {
   return (
@@ -10,11 +11,11 @@ const Footer: React.FC = () => {
           {/* Left: Logo and Button */}
           <div>
             <div className="flex items-center gap-3 mb-8">
-              <img src="/footer/Logo White.png" alt="Fullness Logo" className="h-12" />
+              <img src={FOOTER_IMAGES.LOGO_WHITE} alt="Fullness Logo" className="h-12" />
             </div>
             <ImageButton 
               href="#" 
-              src="/footer/Btn Agendar cita.png" 
+              src={FOOTER_IMAGES.BTN_AGENDAR}
               alt="Agendar cita"
               imageClassName="h-12"
             />
@@ -52,20 +53,20 @@ const Footer: React.FC = () => {
             {/* Social icons */}
             <div className="flex gap-4">
               <a href="#" className="text-white hover:opacity-80 transition">
-                <img src="/footer/ic_baseline-facebook.png" alt="facebook" className="w-8 h-8" />
+                <img src={FOOTER_IMAGES.FACEBOOK} alt="facebook" className="w-8 h-8" />
               </a>
               <a href="#" className="text-white hover:opacity-80 transition">
-                <img src="/footer/Instagram.png" alt="instagram" className="w-8 h-8" />
+                <img src={FOOTER_IMAGES.INSTAGRAM} alt="instagram" className="w-8 h-8" />
               </a>
               <a href="#" className="text-white hover:opacity-80 transition">
-                <img src="/footer/YouTube.png" alt="youtube" className="w-8 h-8" />
+                <img src={FOOTER_IMAGES.YOUTUBE} alt="youtube" className="w-8 h-8" />
               </a>
             </div>
 
             {/* Libro de Reclamaciones */}
             <ImageButton 
               href="#" 
-              src="/footer/Libro de Reclamaciones.png" 
+              src={FOOTER_IMAGES.LIBRO_RECLAMACIONES}
               alt="Libro de Reclamaciones"
               imageClassName="h-24"
             />
