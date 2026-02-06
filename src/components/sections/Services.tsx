@@ -11,32 +11,32 @@ const Services: React.FC = () => {
     {
       title: 'Rehabilitación Deportiva',
       description: 'Recuperación completa de lesiones deportivas con protocolos avanzados',
-      icon: '⚽'
+      icon: '/modalidades/gridicons_house.png'
     },
     {
       title: 'Fisioterapia Respiratoria',
       description: 'Mejora de la función respiratoria y capacidad pulmonar',
-      icon: '🫁'
+      icon: '/modalidades/material-symbols_computer-rounded.png'
     },
     {
       title: 'Masoterapia Terapéutica',
       description: 'Tratamientos con masaje especializado para aliviar tensiones',
-      icon: '💆'
+      icon: '/beneficios/perfil.png'
     },
     {
       title: 'Terapia Manual Avanzada',
       description: 'Técnicas manuales efectivas para diferentes patologías',
-      icon: '🙌'
+      icon: '/beneficios/doctor.png'
     },
     {
       title: 'Cinesiterapia',
       description: 'Ejercicios terapéuticos para mejorar movilidad y fuerza',
-      icon: '🏃'
+      icon: '/modalidades/mingcute_hospital-fill.png'
     },
     {
       title: 'Electroestimulación',
       description: 'Tratamiento con tecnología de punta para aceleración de recuperación',
-      icon: '⚡'
+      icon: '/beneficios/hospital.png'
     },
   ];
 
@@ -56,7 +56,7 @@ const Services: React.FC = () => {
               key={index}
               className="group relative bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 p-8 rounded-2xl hover:border-primary hover:shadow-xl transition-all cursor-pointer"
             >
-              <div className="text-6xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
+              <img src={service.icon} alt={service.title} className="w-16 h-16 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-2xl font-bold text-primary mb-3">{service.title}</h3>
               <p className="text-gray-600 group-hover:text-gray-800 transition">{service.description}</p>
               

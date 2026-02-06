@@ -9,32 +9,32 @@ interface Feature {
 const Features: React.FC = () => {
   const features: Feature[] = [
     {
-      icon: '🏥',
+      icon: '/beneficios/doctor.png',
       title: 'Profesionales Certificados',
       description: 'Nuestro equipo cuenta con certificaciones internacionales y amplia experiencia'
     },
     {
-      icon: '⚡',
+      icon: '/beneficios/hospital.png',
       title: 'Resultados Rápidos',
       description: 'Tratamientos efectivos con protocolos modernos basados en evidencia científica'
     },
     {
-      icon: '🎯',
+      icon: '/beneficios/doc.png',
       title: 'Atención Personalizada',
       description: 'Cada paciente recibe un plan de tratamiento adaptado a sus necesidades específicas'
     },
     {
-      icon: '🕐',
+      icon: '/beneficios/calendar.png',
       title: 'Horarios Flexibles',
       description: 'Disponibilidad en horarios que se adapten a tu rutina diaria'
     },
     {
-      icon: '💪',
+      icon: '/beneficios/perfil.png',
       title: 'Equipamiento Moderno',
       description: 'Contamos con la tecnología más avanzada en fisioterapia'
     },
     {
-      icon: '✨',
+      icon: '/beneficios/cashpay.png',
       title: 'Garantía de Satisfacción',
       description: 'Tu bienestar es nuestra prioridad número uno'
     },
@@ -56,7 +56,7 @@ const Features: React.FC = () => {
               key={index}
               className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow"
             >
-              <div className="text-5xl mb-4">{feature.icon}</div>
+              <img src={feature.icon} alt={feature.title} className="w-12 h-12 mb-4" />
               <h3 className="text-xl font-bold text-primary mb-3">{feature.title}</h3>
               <p className="text-gray-600">{feature.description}</p>
             </div>

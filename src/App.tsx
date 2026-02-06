@@ -1,20 +1,19 @@
-import Topbar from './components/Topbar';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import Services from './components/Services';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import PacientesPage from './pages/PacientesPage';
+import ProfesionalesPage from './pages/ProfesionalesPage';
+import BlogPage from './pages/BlogPage';
 
 function App() {
   return (
-    <div className="bg-white">
-      <Topbar />
-      <Header />
-      <Hero />
-      <Features />
-      <Services />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/pacientes" element={<PacientesPage />} />
+        <Route path="/profesionales" element={<ProfesionalesPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+      </Routes>
+    </Router>
   );
 }
 
