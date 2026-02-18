@@ -29,6 +29,17 @@ export const SPECIALTIES_IMAGES = {
   },
 } as const;
 
+// Landing Page - opinion section
+export const TESTIMONIAL_IMAGES = {
+  THERESA: '/landing/testimonios/Imagen 2.png',
+  LESLIE: '/landing/testimonios/Imagen 1.png',
+  ANNETTE: '/landing/testimonios/Imagen 13.png',
+  QUOTE_ICON: '/landing/testimonios/Quote.png',
+  ARROW_LEFT: '/landing/testimonios/Flecha2.png' , 
+  ARROW_RIGHT: '/landing/testimonios/Flecha.png',
+} as const;
+
+
 // Header & Navigation
 export const HEADER_IMAGES = {
   LOGO_ICON: '/header/Logo icon.png',
@@ -44,6 +55,7 @@ export const TOPBAR_IMAGES = {
   INSTAGRAM: '/top-banner/Instagram.png',
   YOUTUBE: '/top-banner/YouTube.png',
 } as const;
+
 
 // Footer
 export const FOOTER_IMAGES = {
