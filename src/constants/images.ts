@@ -19,6 +19,12 @@ export const ARTICLES_IMAGES = {
   WELLB: '/landing/articles-landing/rehab.png',
 } as const
 
+export const HEROQ_IMAGES = {
+  SOFA: '/landing/heroq-landing/sofa.png',
+  HOMBRE: '/landing/heroq-landing/hombre.png',
+  INTERROGACION_GRANDE: '/landing/heroq-landing/interrogacion-grande.png',
+
+}
 // Landing Page - Specialties Section
 export const SPECIALTIES_IMAGES = {
   NUTRITION: {

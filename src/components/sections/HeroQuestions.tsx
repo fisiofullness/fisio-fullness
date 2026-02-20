@@ -1,26 +1,21 @@
 import React from 'react';
+import { HEROQ_IMAGES } from '../../constants/images';
 
 interface IllustrationProps {
     sofaImage: string;
     hombreImage: string;
     interrogacionGrande: string;
-    interrogacionPequena: string;
 }
 
-/**
- * Componente de ilustración compuesta para HeroQuestions
- * Superpone 4 imágenes diferentes en posiciones específicas
- */
 const HeroQuestionsIllustration: React.FC<IllustrationProps> = ({
     sofaImage,
     hombreImage,
     interrogacionGrande,
-    interrogacionPequena,
 }) => (
     <div className="relative w-full max-w-2xl h-96 md:h-full">
 
         {/* Sofá - Fondo principal (z-10) */}
-        <div className="absolute inset-0 flex items-end justify-end">
+        <div className="absolute bottom-0 left-0 w-[80%] h-auto z-10">
             <img
                 src={sofaImage}
                 alt="Sofá"
@@ -29,38 +24,35 @@ const HeroQuestionsIllustration: React.FC<IllustrationProps> = ({
         </div>
 
         {/* Hombre - Centro (z-20) */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute bottom-0 left-[50%] translate-x-[-50%] w-[40%] h-auto z-20">
             <img
                 src={hombreImage}
                 alt="Persona"
-                className="w-1/2 h-auto object-contain"
+                className="w-full h-auto object-contain"
             />
         </div>
 
         {/* Interrogación Grande - Arriba a la derecha (z-15) */}
-        <div className="absolute top-0 right-0 w-1/3 h-1/3">
+        <div className="absolute top-[-10%] right-[-5%] w-[30%] h-auto z-15">
             <img
                 src={interrogacionGrande}
                 alt="Interrogación grande"
-                className="w-full h-full object-contain opacity-80"
+                className="w-full h-auto object-contain opacity-80"
             />
         </div>
 
         {/* Interrogación Pequeña - Arriba a la izquierda (z-5) */}
-        <div className="absolute top-10 left-0 w-1/5 h-1/5">
+        <div className="absolute top-[5%] left-[5%] w-[15%] h-auto z-5">
             <img
-                src={interrogacionPequena}
+                src={interrogacionGrande}
                 alt="Interrogación pequeña"
-                className="w-full h-full object-contain opacity-70"
+                className="w-full h-auto object-contain opacity-60"
             />
         </div>
 
     </div>
 );
 
-/**
- * Hero Banner para "Pregunta al Experto"
- */
 const HeroQuestions: React.FC = () => {
     return (
         <section className="bg-gradient-to-r from-[#16577A] to-[#1a6a95] w-full py-20 md:py-32">
@@ -85,10 +77,9 @@ const HeroQuestions: React.FC = () => {
                     {/* Contenido Derecho - Ilustración Compuesta */}
                     <div className="w-full md:w-1/2 flex justify-center items-center">
                         <HeroQuestionsIllustration
-                            sofaImage="/images/sofa.png"
-                            hombreImage="/images/hombre.png"
-                            interrogacionGrande="/images/interrogacion-grande.png"
-                            interrogacionPequena="/images/interrogacion-pequena.png"
+                            sofaImage={HEROQ_IMAGES.SOFA}
+                            hombreImage={HEROQ_IMAGES.HOMBRE}
+                            interrogacionGrande={HEROQ_IMAGES.INTERROGACION_GRANDE}
                         />
                     </div>
 
