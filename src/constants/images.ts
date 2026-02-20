@@ -13,6 +13,12 @@ export const HERO_IMAGES = {
   WHATSAPP_BUTTON: '/Btn Wpp.png',
 } as const;
 
+export const ARTICLES_IMAGES = {
+  PREVENTION: '/landing/articles-landing/family.png',
+  REHABILITATION: '/landing/articles-landing/rehab.png',
+  WELLB: '/landing/articles-landing/rehab.png',
+} as const
+
 // Landing Page - Specialties Section
 export const SPECIALTIES_IMAGES = {
   NUTRITION: {
