@@ -39,6 +39,13 @@ export const TESTIMONIAL_IMAGES = {
   ARROW_RIGHT: '/landing/testimonios/Flecha.png',
 } as const;
 
+// Landing Page - Expert Section
+export const EXPERT_IMAGES = {
+  PLANT_ILUSTRATION: '/landing/expert-landing/Imagen 5.png',
+  LEFT_ILLUSTRATION: '/landing/expert-landing/Imagen7.png',
+  RIGHT_ILLUSTRATION: '/landing/expert-landing/Question2.png',
+} as const;
+
 
 // Header & Navigation
 export const HEADER_IMAGES = {

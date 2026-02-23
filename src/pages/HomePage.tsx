@@ -1,6 +1,6 @@
 import React from 'react';
 import { Topbar, Header, Footer } from '../components/common';
-import { Hero, StatsSection, Features, Services } from '../components/sections';
+import { Hero, StatsSection, Features, Services, ExpertSection } from '../components/sections';
 import Testimonials from '../components/sections/Testimonials';
 
 const HomePage: React.FC = () => {
@@ -13,6 +13,7 @@ const HomePage: React.FC = () => {
       <Features />
       <Services />
       <Testimonials />
+      <ExpertSection />
       <Footer />
     </div>
   );

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { TESTIMONIAL_IMAGES } from '../../constants/images';
 
@@ -18,7 +17,7 @@ const Testimonials: React.FC = () => {
       name: 'Theresa Webb',
       role: 'Paciente de Fisioterapia',
       quote:
-        'Las terapias que llevé se adapataron perfectamente a mi rutina laboral. Ahora puedo trabajar sin dolor',
+        'Las terapias que llevé se adaptaron perfectamente a mi rutina laboral. Ahora puedo trabajar sin dolor',
       image: TESTIMONIAL_IMAGES.THERESA,
     },
     {
@@ -26,7 +25,7 @@ const Testimonials: React.FC = () => {
       name: 'Leslie Alexander',
       role: 'Paciente de Nutrición',
       quote:
-        'Hace meses que tenía anemia, ahora ya esta controlada. Mi nutriólogo me dio confianza y me guío en el proceso',
+        'Hace meses que tenía anemia, ahora ya esta controlada. Mi nutriólogo me dio confianza y me guió en el proceso',
       image: TESTIMONIAL_IMAGES.LESLIE,
       isMain: true,
     },
@@ -40,38 +39,42 @@ const Testimonials: React.FC = () => {
     },
   ];
 
-  const renderStars = () => (
-    <div className="flex gap-[5px] justify-center mt-6">
-      {[1, 2, 3, 4].map((s) => (
-        <svg key={s} width="38" height="35" viewBox="0 0 38 35">
+  const renderStars = () => {
+    const viewBox = "0 0 38 35";
+    
+    return (
+      <div className="flex justify-center mt-auto gap-[6px]">
+        {[1, 2, 3, 4].map((s) => (
+          <svg key={s} width="28" height="26" viewBox={viewBox} className="lg:w-[38px] lg:h-[35px]">
+            <path
+              d="M19 0L23.18 12.8633H36.7063L25.7631 20.8135L29.9431 33.6767L19 25.7265L8.05688 33.6767L12.2369 20.8135L1.29366 12.8633H14.8199L19 0Z"
+              fill="#D0A21B"
+            />
+          </svg>
+        ))}
+        <svg width="28" height="26" viewBox={viewBox} className="lg:w-[38px] lg:h-[35px]">
           <path
             d="M19 0L23.18 12.8633H36.7063L25.7631 20.8135L29.9431 33.6767L19 25.7265L8.05688 33.6767L12.2369 20.8135L1.29366 12.8633H14.8199L19 0Z"
             fill="#D0A21B"
+            fillOpacity="0.3"
           />
         </svg>
-      ))}
-      <svg width="38" height="35" viewBox="0 0 38 35">
-        <path
-          d="M19 0L23.18 12.8633H36.7063L25.7631 20.8135L29.9431 33.6767L19 25.7265L8.05688 33.6767L12.2369 20.8135L1.29366 12.8633H14.8199L19 0Z"
-          fill="#D0A21B"
-          fillOpacity="0.3"
-        />
-      </svg>
-    </div>
-  );
+      </div>
+    );
+  };
 
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-4 max-w-[1440px]">
-
-        {/* HEADER */}
-        <div className="text-center mb-20">
+    <section className="relative w-full bg-white flex justify-center items-center overflow-hidden min-h-[630px] py-20">
+      <div className="w-full max-w-[1440px] px-4 lg:px-12 relative flex flex-col items-center">
+        
+        <div className="text-center mb-28">
           <h2
             style={{
-              fontFamily: 'Raleway',
+              fontFamily: 'Raleway, sans-serif',
               fontWeight: 700,
               fontSize: '48.83px',
               color: '#104E75',
+              lineHeight: '57px',
             }}
           >
             Lo que dicen nuestros pacientes
@@ -80,7 +83,8 @@ const Testimonials: React.FC = () => {
           <p
             className="mt-4"
             style={{
-              fontFamily: 'Raleway',
+              fontFamily: 'Raleway, sans-serif',
+              fontWeight: 400,
               fontSize: '20px',
               color: '#488FAD',
             }}
@@ -89,111 +93,113 @@ const Testimonials: React.FC = () => {
           </p>
         </div>
 
-        {/* WRAPPER CARDS + FLECHAS */}
-        <div className="relative flex justify-center items-center">
-
-          {/* Flecha Izquierda */}
-          <button className="absolute -left-16 top-1/2 -translate-y-1/2 z-20">
+        <div className="relative w-full flex justify-center items-center">
+          
+          <button className="absolute left-0 xl:left-2 top-1/2 -translate-y-1/2 z-20 hidden md:block">
             <img
               src={TESTIMONIAL_IMAGES.ARROW_LEFT}
-              className="w-[40px] h-[40px] opacity-60 hover:opacity-100 transition"
+              alt="Anterior"
+              className="w-[48px] h-[48px] opacity-80 hover:opacity-100 hover:scale-110 transition-all cursor-pointer"
             />
           </button>
 
-          {/* Flecha Derecha */}
-          <button className="absolute -right-16 top-1/2 -translate-y-1/2 z-20">
-            <img
-              src={TESTIMONIAL_IMAGES.ARROW_RIGHT}
-              className="w-[40px] h-[40px] opacity-60 hover:opacity-100 transition"
-            />
-          </button>
-
-          {/* CARDS */}
-          <div className="flex gap-12 items-end">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-8 w-full max-w-[1200px]">
             {testimonials.map((item) => (
               <div
                 key={item.id}
-                className={`relative flex flex-col items-center ${
-                  item.isMain ? 'mt-0' : 'mt-10'
-                }`}
-                style={{ width: item.isMain ? 400 : 350 }}
+                className="relative flex flex-col items-center flex-shrink-0 transition-all duration-300"
+                style={{
+                  width: item.isMain ? '400px' : '340px',
+                }}
               >
-                {/* Avatar */}
-                <div className="absolute -top-16 z-10">
-                  <div
-                    className="rounded-full overflow-hidden border-4 border-white"
-                    style={{
-                      width: item.isMain ? 140 : 120,
-                      height: item.isMain ? 140 : 120,
-                    }}
-                  >
-                    <img src={item.image} className="w-full h-full object-cover" />
-                  </div>
-                </div>
-
-                {/* Card */}
                 <div
-                  className="pt-20 pb-8 px-8 flex flex-col items-center text-center w-full relative"
+                  className="absolute z-10 rounded-full overflow-hidden border-[5px] border-white bg-white shadow-sm"
                   style={{
-                    background: 'rgba(68,139,169,0.2)',
-                    minHeight: item.isMain ? 320 : 280,
+                    width: item.isMain ? '140px' : '100px',
+                    height: item.isMain ? '140px' : '100px',
+                    top: item.isMain ? '-70px' : '-50px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
                   }}
                 >
-                  {/* Quote */}
+                  <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                </div>
+
+                <div
+                  className="w-full relative flex flex-col items-center text-center px-8 pb-8"
+                  style={{
+                    backgroundColor: item.isMain ? 'rgba(68, 139, 169, 0.2)' : 'rgba(68, 139, 169, 0.12)',
+                    paddingTop: item.isMain ? '85px' : '65px',
+                    paddingLeft: item.isMain ? '32px' : '48px',
+                    paddingRight: item.isMain ? '32px' : '48px',
+                    height: item.isMain ? '340px' : '310px',
+                  }}
+                >
                   <img
                     src={TESTIMONIAL_IMAGES.QUOTE_ICON}
-                    className="absolute"
+                    alt="Quote"
+                    className="absolute z-0 pointer-events-none"
                     style={{
-                      width: item.isMain ? 80 : 62,
-                      left: item.isMain ? 28 : 33,
-                      top: item.isMain ? 32 : 29,
+                      width: item.isMain ? '75px' : '55px',
+                      left: item.isMain ? '24px' : '16px',
+                      top: item.isMain ? '24px' : '16px',
+                      opacity: item.isMain ? 1 : 0.6,
                     }}
                   />
 
-                  {/* Name */}
-                  <h3
-                    className="mt-2"
-                    style={{
-                      fontFamily: 'Raleway',
-                      fontWeight: 700,
-                      fontSize: item.isMain ? 25 : 20,
-                      color: '#104E75',
-                    }}
-                  >
-                    {item.name}
-                  </h3>
+                  <div className="relative z-10 flex flex-col items-center h-full w-full">
+                    <h3
+                      style={{
+                        fontFamily: 'Raleway, sans-serif',
+                        fontWeight: 700,
+                        fontSize: '24px',
+                        color: '#104E75',
+                        marginBottom: '4px',
+                      }}
+                    >
+                      {item.name}
+                    </h3>
 
-                  {/* Role */}
-                  <p
-                    className="mt-1"
-                    style={{
-                      fontFamily: 'Open Sans',
-                      fontSize: 16,
-                      color: '#404143',
-                    }}
-                  >
-                    {item.role}
-                  </p>
+                    <p
+                      style={{
+                        fontFamily: 'Open Sans, sans-serif',
+                        fontWeight: 600,
+                        fontSize: '14px',
+                        color: '#404143',
+                        marginBottom: item.isMain ? '20px' : '16px',
+                      }}
+                    >
+                      {item.role}
+                    </p>
 
-                  {/* Quote Text */}
-                  <p
-                    className="mt-4"
-                    style={{
-                      fontFamily: 'Open Sans',
-                      fontSize: 16,
-                      lineHeight: '24px',
-                      color: '#104E75',
-                      maxWidth: item.isMain ? 340 : 296,
-                    }}
-                  >
-                    “{item.quote}”
-                  </p>
+                    <p
+                      className="flex items-center justify-center flex-grow"
+                      style={{
+                        fontFamily: 'Open Sans, sans-serif',
+                        fontWeight: 400,
+                        fontSize: '16px',
+                        lineHeight: '26px',
+                        color: '#104E75',
+                      }}
+                    >
+                      "{item.quote}"
+                    </p>
 
-                  {renderStars()}
+                    {renderStars()}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
+
+          <button className="absolute right-0 xl:right-2 top-1/2 -translate-y-1/2 z-20 hidden md:block">
+            <img
+              src={TESTIMONIAL_IMAGES.ARROW_RIGHT}
+              alt="Siguiente"
+              className="w-[48px] h-[48px] opacity-80 hover:opacity-100 hover:scale-110 transition-all cursor-pointer"
+            />
+          </button>
+
         </div>
       </div>
     </section>
